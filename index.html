@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <title>武将タイプ診断</title>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================
+       スタート画面
+  ====================================== -->
+
+  <div id="startScreen">
+
+
+    <!-- 上部ラベル -->
+
+    <p class="topLabel">
+      SENGOKU PERSONALITY TEST
+    </p>
+
+
+    <!-- メインタイトル -->
+
+    <h1>
+      武将タイプ診断
+    </h1>
+
+
+    <div class="titleLine"></div>
+
+
+    <!-- キャッチコピー -->
+
+    <p class="startCatch">
+
+      あなたは、<br>
+
+      <strong>
+        天下を取れるタイプか？
+      </strong>
+
+    </p>
+
+
+    <!-- 説明 -->
+
+    <p class="startDescription">
+
+      もしあなたが戦国時代に生きていたら、<br>
+
+      どの武将タイプだったのか――。
+
+      <br><br>
+
+      15問の質問から、<br>
+
+      あなたの性格や行動パターンを分析します。
+
+    </p>
+
+
+    <!-- 武将画像 -->
+
+    <div class="character startCharacter">
+
+      <img
+        src="images/oda.jpeg"
+        alt="戦国武将"
+      >
+
+    </div>
+
+
+    <!-- 診断する5つの要素 -->
+
+    <div class="startTraits">
+
+
+      <p class="traitsTitle">
+        ANALYZING YOUR PERSONALITY
+      </p>
+
+
+      <div class="traitGrid">
+
+
+        <div class="traitItem">
+
+          <span>🔥</span>
+
+          <p>
+            革新・大胆さ
+          </p>
+
+        </div>
+
+
+        <div class="traitItem">
+
+          <span>🤝</span>
+
+          <p>
+            社交性
+          </p>
+
+        </div>
+
+
+        <div class="traitItem">
+
+          <span>🧠</span>
+
+          <p>
+            戦略性
+          </p>
+
+        </div>
+
+
+        <div class="traitItem">
+
+          <span>⚔️</span>
+
+          <p>
+            信念
+          </p>
+
+        </div>
+
+
+        <div class="traitItem">
+
+          <span>🌙</span>
+
+          <p>
+            個性・野心
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- ひとこと -->
+
+    <p class="startQuestion">
+
+      果たしてあなたは――<br>
+
+      <strong>
+        どの武将になるのか？
+      </strong>
+
+    </p>
+
+
+    <!-- スタートボタン -->
+
+    <button id="startButton">
+
+      <span>
+        ⚔
+      </span>
+
+      診断を始める
+
+      <span>
+        ⚔
+      </span>
+
+    </button>
+
+
+    <!-- 注意書き -->
+
+    <p class="startNote">
+
+      ※この診断は歴史上の人物をモチーフにした
+      エンターテインメント診断です。
+
+    </p>
+
+
+  </div>
+
+
+
+  <!-- =====================================
+       診断画面
+  ====================================== -->
+
+  <div
+    id="quiz"
+    style="display: none;"
+  >
+
+
+    <!-- 診断ヘッダー -->
+
+    <div class="quizHeader">
+
+
+      <p class="quizLabel">
+        BUSHOU TYPE TEST
+      </p>
+
+
+      <h2 id="questionNumber">
+        第1問
+      </h2>
+
+
+      <!-- 進捗 -->
+
+      <div class="progressArea">
+
+
+        <div class="progressText">
+
+          <span id="progressNumber">
+            1
+          </span>
+
+          / 15
+
+        </div>
+
+
+        <div class="progressBar">
+
+          <div id="progressFill"></div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- 質問カード -->
+
+    <div class="questionCard">
+
+
+      <p class="questionSmall">
+        QUESTION
+      </p>
+
+
+      <p id="questionText"></p>
+
+
+    </div>
+
+
+
+    <!-- 回答 -->
+
+    <div id="answers"></div>
+
+
+  </div>
+
+
+
+  <!-- =====================================
+       結果画面
+  ====================================== -->
+
+  <div
+    id="result"
+    style="display: none;"
+  >
+
+
+    <div class="resultCard">
+
+
+      <p class="resultLabel">
+        YOUR BUSHOU TYPE
+      </p>
+
+
+      <h2>
+        🏆 診断結果
+      </h2>
+
+
+      <div class="resultLine"></div>
+
+
+
+      <!-- 武将画像 -->
+
+      <div class="resultCharacter">
+
+
+        <img
+          id="resultImage"
+          src="images/oda.jpeg"
+          alt="診断結果の武将"
+        >
+
+
+      </div>
+
+
+
+      <!-- 結果 -->
+
+      <p class="resultIs">
+        あなたは……
+      </p>
+
+
+      <h1 id="resultType"></h1>
+
+
+      <p id="resultDescription"></p>
+
+
+
+      <!-- メッセージ -->
+
+      <div class="resultMessage">
+
+        あなたの個性を活かして、<br>
+
+        自分だけの道を切り開こう。
+
+      </div>
+
+
+
+      <!-- =================================
+           性格傾向
+      ================================== -->
+
+      <div class="personalitySection">
+
+
+        <p class="personalityTitle">
+          YOUR PERSONALITY
+        </p>
+
+
+        <h2>
+          あなたの性格傾向
+        </h2>
+
+
+
+        <!-- 革新 -->
+
+        <div class="personalityItem">
+
+
+          <div class="personalityHeader">
+
+
+            <span>
+              🔥 革新・大胆さ
+            </span>
+
+
+            <span id="innovationScore">
+              0%
+            </span>
+
+
+          </div>
+
+
+          <div class="personalityBar">
+
+
+            <div
+              id="innovationBar"
+              class="personalityFill"
+            ></div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- 社交 -->
+
+        <div class="personalityItem">
+
+
+          <div class="personalityHeader">
+
+
+            <span>
+              🤝 社交性
+            </span>
+
+
+            <span id="socialScore">
+              0%
+            </span>
+
+
+          </div>
+
+
+          <div class="personalityBar">
+
+
+            <div
+              id="socialBar"
+              class="personalityFill"
+            ></div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- 慎重 -->
+
+        <div class="personalityItem">
+
+
+          <div class="personalityHeader">
+
+
+            <span>
+              🧠 慎重・戦略性
+            </span>
+
+
+            <span id="carefulScore">
+              0%
+            </span>
+
+
+          </div>
+
+
+          <div class="personalityBar">
+
+
+            <div
+              id="carefulBar"
+              class="personalityFill"
+            ></div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- 信念 -->
+
+        <div class="personalityItem">
+
+
+          <div class="personalityHeader">
+
+
+            <span>
+              ⚔️ 信念
+            </span>
+
+
+            <span id="beliefScore">
+              0%
+            </span>
+
+
+          </div>
+
+
+          <div class="personalityBar">
+
+
+            <div
+              id="beliefBar"
+              class="personalityFill"
+            ></div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- 個性 -->
+
+        <div class="personalityItem">
+
+
+          <div class="personalityHeader">
+
+
+            <span>
+              🌙 個性・野心
+            </span>
+
+
+            <span id="individualScore">
+              0%
+            </span>
+
+
+          </div>
+
+
+          <div class="personalityBar">
+
+
+            <div
+              id="individualBar"
+              class="personalityFill"
+            ></div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- もう一度診断 -->
+
+      <button id="restartButton">
+
+        ⚔ もう一度診断する
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================
+       結果発表演出
+  ====================================== -->
+
+  <div
+    id="resultEffect"
+    style="display: none;"
+  >
+
+
+    <div class="effectSword">
+      ⚔
+    </div>
+
+
+    <p>
+      あなたの武将タイプは……
+    </p>
+
+
+    <div class="effectLine"></div>
+
+
+  </div>
+
+
+
+  <!-- JavaScript -->
+
+<!-- =====================================
+     再スタート演出
+====================================== -->
+
+<div id="restartEffect">
+
+  <div class="restartSword">
+    ⚔
+  </div>
+
+  <div class="restartMessage">
+    再び戦場へ――
+  </div>
+
+  <div class="restartLine"></div>
+
+</div>
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
