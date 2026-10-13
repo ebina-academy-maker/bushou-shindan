@@ -2432,11 +2432,12 @@ button:hover {
 .warriorItem img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 140px;
   object-fit: contain;
   object-position: center bottom;
-  filter: drop-shadow(0 5px 4px rgba(35, 27, 17, 0.18));
+  filter: drop-shadow(0 4px 3px rgba(35, 27, 17, 0.15));
 }
+
 
 /* 武将名 */
 
