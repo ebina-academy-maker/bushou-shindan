@@ -2570,4 +2570,12 @@ button:hover {
 
   }
 
+/* トップ画面の武将画像サイズ調整 */
+.startCharacter img {
+  width: 150px;
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
 }
