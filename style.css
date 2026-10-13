@@ -2588,3 +2588,20 @@ button:hover {
 }
 
 }
+/* トップ画面の織田信長 */
+.startCharacter {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.startCharacter img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
