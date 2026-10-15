@@ -2349,3 +2349,27 @@ button:hover {
   font-size: 11px;
   letter-spacing: 0.05em;
 }
+/* スマホ用：制作スタッフの文字間隔 */
+
+@media (max-width: 600px) {
+  .creatorCredits {
+    margin-top: 45px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .creditItem {
+    line-height: 2.2;
+    margin-bottom: 22px;
+    font-size: 14px;
+  }
+
+  .creditItem span {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  .creditCopyright {
+    margin-top: 30px;
+  }
+}
