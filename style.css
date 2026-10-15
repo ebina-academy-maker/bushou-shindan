@@ -2310,3 +2310,42 @@ button:hover {
   }
 
 }
+/* =====================================
+   制作者表示
+===================================== */
+
+.creatorCredits {
+  margin: 35px auto 5px;
+  padding: 22px 12px 8px;
+  max-width: 520px;
+  border-top: 1px solid #b59a5b;
+  text-align: center;
+  color: #d8cba8;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.creditTitle {
+  margin: 0 0 20px;
+  color: #d9b968;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.creditItem {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.creditItem span {
+  color: #b59a5b;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.creditCopyright {
+  margin: 25px 0 0;
+  color: #a99c7e;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
