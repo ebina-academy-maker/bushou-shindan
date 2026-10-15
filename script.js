@@ -350,7 +350,7 @@ const resultData = {
   謙信: {
     name: "上杉謙信タイプ",
     description: "自分の信念を大切にし、筋を通して行動するタイプです。",
-    image: "images/kenshin.png"
+    image: "images/kennsin.png"
   },
 
   政宗: {
