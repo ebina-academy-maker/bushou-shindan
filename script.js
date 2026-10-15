@@ -360,7 +360,6 @@ const resultData = {
   }
 };
 
-
   const data = resultData[bestType];
 
   // 結果画面
