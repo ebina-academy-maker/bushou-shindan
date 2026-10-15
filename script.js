@@ -399,10 +399,22 @@ const resultData = {
     imagePlaceholder.style.display = "none";
   };
 
-  resultImage.style.display = "block";
+    resultImage.style.display = "block";
   imagePlaceholder.style.display = "none";
-  resultImage.src = data.image;
 
+  // いったん画像サイズをリセット
+  resultImage.style.width = "";
+  resultImage.style.maxWidth = "";
+  resultImage.style.maxHeight = "";
+
+  // 謙信の画像だけ大きくする
+  if (data.image === "images/kennsin.png") {
+    resultImage.style.width = "100%";
+    resultImage.style.maxWidth = "380px";
+    resultImage.style.maxHeight = "none";
+  }
+
+  resultImage.src = data.image;
   // 性格グラフ
   showPersonalityScores();
 
