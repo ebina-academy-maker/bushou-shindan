@@ -321,49 +321,45 @@ function showResult() {
   }
 
   // 武将データ
-  const resultData = {
-    信長: {
-      name: "織田信長タイプ",
-      description:
-        "新しいことに挑戦する大胆さと、強い決断力を持つタイプです。",
-      image: "images/oda.png"
-    },
 
-    秀吉: {
-      name: "豊臣秀吉タイプ",
-      description:
-        "人とのつながりを大切にし、周囲の力を引き出すのが得意なタイプです。",
-      image: "images/hide.jpeg"
-    },
+const resultData = {
+  信長: {
+    name: "織田信長タイプ",
+    description: "新しいことに挑戦する大胆さと、強い決断力を持つタイプです。",
+    image: "images/oda.png"
+  },
 
-    家康: {
-      name: "徳川家康タイプ",
-      description:
-        "じっくり考え、長期的な視点で物事を進めるタイプです。",
-      image: "images/ieyasu.jpeg"
-    },
+  秀吉: {
+    name: "豊臣秀吉タイプ",
+    description: "人とのつながりを大切にし、周囲の力を引き出すのが得意なタイプです。",
+    image: "images/hide.png"
+  },
 
-    信玄: {
-      name: "武田信玄タイプ",
-      description:
-        "冷静な分析力と戦略性を持ち、計画的に物事を進めるタイプです。",
-      image: "images/shingen.jpeg"
-    },
+  家康: {
+    name: "徳川家康タイプ",
+    description: "じっくり考え、長期的な視点で物事を進めるタイプです。",
+    image: "images/ieyasu.png"
+  },
 
-    謙信: {
-      name: "上杉謙信タイプ",
-      description:
-        "自分の信念を大切にし、筋を通して行動するタイプです。",
-      image: "images/kenshin.jpeg"
-    },
+  信玄: {
+    name: "武田信玄タイプ",
+    description: "冷静な分析力と戦略性を持ち、計画的に物事を進めるタイプです。",
+    image: "images/takeda.png"
+  },
 
-    政宗: {
-      name: "伊達政宗タイプ",
-      description:
-        "個性的な発想と行動力を持ち、大きな目標に挑戦するタイプです。",
-      image: "images/date.png"
-    }
-  };
+  謙信: {
+    name: "上杉謙信タイプ",
+    description: "自分の信念を大切にし、筋を通して行動するタイプです。",
+    image: "images/kenshin.png"
+  },
+
+  政宗: {
+    name: "伊達政宗タイプ",
+    description: "個性的な発想と行動力を持ち、大きな目標に挑戦するタイプです。",
+    image: "images/date.png"
+  }
+};
+
 
   const data = resultData[bestType];
 
